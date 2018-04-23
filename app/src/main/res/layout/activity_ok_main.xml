@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.bbbbbbbbb.a0416httpproject.ok.OkMainActivity">
+
+    <Button
+        android:id="@+id/ok_main_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="get请求" />
+
+    <Button
+        android:id="@+id/ok_main_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="post请求" />
+
+    <Button
+        android:id="@+id/ok_main_file_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="文件上传" />
+
+    <Button
+        android:id="@+id/ok_main_file_down"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="文件下载" />
+
+    <Button
+        android:id="@+id/ok_main_img_down"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="加载图片" />
+
+</LinearLayout>

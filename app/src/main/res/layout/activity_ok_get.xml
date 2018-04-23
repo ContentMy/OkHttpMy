@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.bbbbbbbbb.a0416httpproject.ok.okmainactivity.OkGetActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/ok_get_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="同步Get" />
+
+        <Button
+            android:id="@+id/ok_get_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="异步Get" />
+
+        <TextView
+            android:id="@+id/ok_get_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

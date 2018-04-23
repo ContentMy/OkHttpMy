@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.bbbbbbbbb.a0416httpproject.ok.okmainactivity.OkPostActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="输入登录名" />
+
+    <EditText
+        android:id="@+id/post_text_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="123456" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="输入密码" />
+
+    <EditText
+        android:id="@+id/post_text_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="123456" />
+
+    <Button
+        android:id="@+id/post_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="提交（同步）" />
+
+    <Button
+        android:id="@+id/post_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="提交（异步）" />
+
+    <TextView
+        android:id="@+id/post_text_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="结果为：" />
+</LinearLayout>

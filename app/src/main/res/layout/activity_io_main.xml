@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.bbbbbbbbb.a0416httpproject.io.IoMainActivity">
+
+    <Button
+        android:id="@+id/io_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="io_inputStream" />
+
+    <Button
+        android:id="@+id/io_output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="io_outputStream" />
+
+    <Button
+        android:id="@+id/io_reader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="io_reader" />
+
+    <Button
+        android:id="@+id/io_writer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="io_writer" />
+</LinearLayout>
