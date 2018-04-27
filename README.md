@@ -1,10 +1,10 @@
-#OkHttpUtil 说明文档
+# OkHttpUtil 说明文档
 
-######Tips:现在只是第一版本，狗屎最初版，啊哈哈哈哈哈
+###### Tips:现在只是第一版本，狗屎最初版，啊哈哈哈哈哈
 
 > 使用OkHttp的依赖：compile 'com.squareup.okhttp3:okhttp:3.10.0'
 
-###1.Get请求
+### 1.Get请求
 
 * 此处封装的Get请求有同步和异步两种；
 
@@ -31,7 +31,7 @@
     ​	![1524797076861](./screenshot/1524797076861.png)
 
 
-###2.Post请求
+### 2.Post请求
 
 * 此处封装的Post请求有同步和异步两种，都有Map对象，添加key-value参数去上传需要的数据：
 
