@@ -77,7 +77,7 @@ public class OkHttpUtils {
      * @param callback
      */
 
-    private void okGetResultCallBack(String url, final OkGetCallback callback) {
+    private void okGetForAysnc(String url, final OkGetCallback callback) {
         Request request = new Request.Builder().url(url).build();
         mClient.newCall(request).enqueue(new Callback() {
             @Override
@@ -97,14 +97,28 @@ public class OkHttpUtils {
      *
      * @param maps
      * @param urlText
+     * @return Response
+     * @throws IOException
+     */
+
+    private Response okPostResponse(Map<String, Object> maps, String urlText) throws IOException {
+
+        Request request = postBuild(maps, urlText);
+        return mClient.newCall(request).execute();
+    }
+
+
+    /**
+     * Post同步
+     *
+     * @param maps
+     * @param urlText
      * @return String
      * @throws IOException
      */
 
     private String okPostString(Map<String, Object> maps, String urlText) throws IOException {
-
-        Request request = postBuild(maps, urlText);
-        final Response response = mClient.newCall(request).execute();
+        final Response response = okPostResponse(maps, urlText);
         ResponseBody body = response.body();
         if (body != null) {
             String s = body.string();
@@ -122,7 +136,7 @@ public class OkHttpUtils {
      * @param callback
      */
 
-    private void okPostCallBack(Map<String, Object> maps, String urlText, final OkPostCallback callback) {
+    private void okPostForAysnc(Map<String, Object> maps, String urlText, final OkPostCallback callback) {
         Request request = postBuild(maps, urlText);
         mClient.newCall(request).enqueue(new Callback() {
             @Override
@@ -159,19 +173,28 @@ public class OkHttpUtils {
     /********************************************************************/
     /**************************暴露的方法********************************/
     /********************************************************************/
-    public String GetResult(String url) throws IOException {
+
+    public Response GetForResponse(String url) throws IOException {
+        return getInstance().okGetResultResponse(url);
+    }
+
+    public String GetForString(String url) throws IOException {
         return getInstance().okGetResultString(url);
     }
 
     public void GetAysnc(String url, OkGetCallback callback) {
-        getInstance().okGetResultCallBack(url, callback);
+        getInstance().okGetForAysnc(url, callback);
     }
 
-    public String PostResult(Map<String, Object> maps, String urlText) throws IOException {
+    public String PostForString(Map<String, Object> maps, String urlText) throws IOException {
         return getInstance().okPostString(maps, urlText);
     }
 
+    public Response PostForResponse(Map<String, Object> maps, String urlText) throws IOException {
+        return getInstance().okPostResponse(maps, urlText);
+    }
+
     public void PostAysnc(Map<String, Object> maps, String urlText, OkPostCallback callback) {
-        getInstance().okPostCallBack(maps, urlText, callback);
+        getInstance().okPostForAysnc(maps, urlText, callback);
     }
 }

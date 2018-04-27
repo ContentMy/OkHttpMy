@@ -39,6 +39,12 @@
         android:id="@+id/post_two"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="提交（同步Response）" />
+
+    <Button
+        android:id="@+id/post_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="提交（异步）" />
 
     <TextView

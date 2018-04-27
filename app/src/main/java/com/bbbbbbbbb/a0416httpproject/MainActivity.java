@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.bbbbbbbbb.a0416httpproject.io.IoMainActivity;
 import com.bbbbbbbbb.a0416httpproject.ok.OkMainActivity;
 import com.bbbbbbbbb.a0416httpproject.ok.okmainactivity.utils.SharePersistent;
 
@@ -30,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
 //        int sonNum = sharedPreferences.getInt("son", 0);
 //        Toast.makeText(this, "" + sonNum, Toast.LENGTH_SHORT).show();
 //        sharedPreferences.edit().putInt("son", 1000).apply();
-        int anInt = SharePersistent.getInstance().getInt(this, "hahaha", 0);
-        Toast.makeText(this, "" + anInt, Toast.LENGTH_SHORT).show();
-        SharePersistent.getInstance().put(this, "hahaha", 123);
+//        int anInt = SharePersistent.getInstance().getInt(this, "hahaha", 0);
+//        Toast.makeText(this, "" + anInt, Toast.LENGTH_SHORT).show();
+//        SharePersistent.getInstance().put(this, "hahaha", 123);
     }
 
     @OnClick({R.id.ok_jump, R.id.io_jump, R.id.exit_app})
@@ -41,14 +40,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.ok_jump:
                 startActivity(new Intent(MainActivity.this, OkMainActivity.class));
                 break;
-            case R.id.io_jump:
-                startActivity(new Intent(MainActivity.this, IoMainActivity.class));
-                break;
             case R.id.exit_app:
                 MainActivity.this.finish();
-                Intent in = new Intent(MainActivity.this, MainActivity.class);
-                MainActivity.this.startActivity(in);
-                overridePendingTransition(0, 0);
+//                Intent in = new Intent(MainActivity.this, MainActivity.class);
+//                MainActivity.this.startActivity(in);
+//                overridePendingTransition(0, 0);
                 break;
         }
     }

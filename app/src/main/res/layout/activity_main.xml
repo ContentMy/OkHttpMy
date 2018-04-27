@@ -17,12 +17,13 @@
         android:id="@+id/io_jump"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="io流" />
+        android:text="io流"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/exit_app"
-        android:text="退出应用"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="退出应用" />
 
 </LinearLayout>

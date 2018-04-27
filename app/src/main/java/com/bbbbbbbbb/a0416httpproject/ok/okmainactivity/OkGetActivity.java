@@ -47,13 +47,18 @@ public class OkGetActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         try {
-                            final String text = OkHttpUtils.getInstance().GetResult(urlString);
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    textView.setText(text);
-                                }
-                            });
+                            final Response response = OkHttpUtils.getInstance().GetForResponse(urlString);
+                            ResponseBody body = response.body();
+                            if (body != null) {
+                                final String text = body.string();
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        textView.setText(text);
+                                    }
+                                });
+                            }
+
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -124,4 +129,12 @@ public class OkGetActivity extends AppCompatActivity {
             }
         });
     }
+
+    /*加载图片*/
+    private void loadImg() {
+//        OkHttpUtils.getInstance().GetResult()
+    }
+    /*下载图片到本地*/
+
+    /*下载文件到本地*/
 }

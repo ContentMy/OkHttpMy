@@ -36,7 +36,6 @@ public class OkPostActivity extends AppCompatActivity {
     EditText name;
     @BindView(R.id.post_text_result)
     TextView result;
-
     String passwordString;
     String usernameString;
     long idLong = 101;
@@ -54,10 +53,9 @@ public class OkPostActivity extends AppCompatActivity {
         maps.put("userId", String.valueOf(idLong));
         maps.put("name", usernameString);
         maps.put("userToken", passwordString);
-
     }
 
-    @OnClick({R.id.post_button, R.id.post_two})
+    @OnClick({R.id.post_button, R.id.post_two, R.id.post_three})
     void buttonClick(View view) {
         switch (view.getId()) {
             case R.id.post_button:
@@ -65,9 +63,8 @@ public class OkPostActivity extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-//                postView();
                         try {
-                            final String s = OkHttpUtils.getInstance().PostResult(maps, urlText);
+                            final String s = OkHttpUtils.getInstance().PostForString(maps, urlText);
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -81,6 +78,28 @@ public class OkPostActivity extends AppCompatActivity {
                 }).start();
                 break;
             case R.id.post_two:
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            final Response response = OkHttpUtils.getInstance().PostForResponse(maps, urlText);
+                            ResponseBody body = response.body();
+                            if (body != null) {
+                                final String s = body.string();
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        result.setText(s);
+                                    }
+                                });
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
+                break;
+            case R.id.post_three:
                 result.setText("");
                 OkHttpUtils.getInstance().PostAysnc(maps, urlText, new OkPostCallback() {
                     @Override
